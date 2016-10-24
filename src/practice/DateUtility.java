@@ -58,10 +58,7 @@ public class DateUtility {
      */
     final public long differenceInDays(LocalDateTime startDate, LocalDateTime endDate) {
         Duration differenceInDays = Duration.between(startDate, endDate);
-//        long hrs = differenceInDays.toHours();
-//        long min = differenceInDays.toMinutes() % 60;
         long days = differenceInDays.toDays();
-//        System.out.println("Hours: " + hrs + ", Minutes: " + min);
         return days;
     }
 
@@ -72,8 +69,7 @@ public class DateUtility {
         String date3 = "2010-01-10";
         
         System.out.println(date.getDate());
-        System.out.println(date.differenceInDays(date1, date2));
-//        date.differenceInDays(date1, date2);
+        System.out.println("Difference in days: " + date.differenceInDays(date1, date2));
         System.out.println(date.stringToDate(date3));
         
     }
