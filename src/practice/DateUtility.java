@@ -56,23 +56,23 @@ public class DateUtility {
      * @param startDate
      * @param endDate 
      */
-    final public void differenceInDays(LocalDate startDate, LocalDate endDate) {
+    final public long differenceInDays(LocalDateTime startDate, LocalDateTime endDate) {
         Duration differenceInDays = Duration.between(startDate, endDate);
-        long hrs = differenceInDays.toHours();
-        long min = differenceInDays.toMinutes() % 60;
+//        long hrs = differenceInDays.toHours();
+//        long min = differenceInDays.toMinutes() % 60;
         long days = differenceInDays.toDays();
 //        System.out.println("Hours: " + hrs + ", Minutes: " + min);
-//        return hrs;
+        return days;
     }
 
     final public static void main(String[] args) {
         DateUtility date = new DateUtility();
-        LocalDate date1 = LocalDate.of(2010, Month.SEPTEMBER, 9);
-        LocalDate date2 = LocalDate.now();
+        LocalDateTime date1 = LocalDateTime.of(2010, Month.SEPTEMBER, 9,0,0);
+        LocalDateTime date2 = LocalDateTime.now();
         String date3 = "2010-01-10";
         
         System.out.println(date.getDate());
-//        System.out.println(date.differenceInDays(date1, date2));
+        System.out.println(date.differenceInDays(date1, date2));
 //        date.differenceInDays(date1, date2);
         System.out.println(date.stringToDate(date3));
         
